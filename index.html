@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Own Business Adventure</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="activity-style.css">
+  <script src="script/jquery-1.7.2.min.js"></script>
+  <script src="script/navigation.js"></script>  
+  <script src="script/cc.js"></script>
+  <style type="text/css">
+    label:nth-of-type(2) {
+      margin-bottom: 1em;
+    }
+    h2 {
+      margin: 0;
+    }
+
+    .avatar img {
+      height: 70px;
+      width: 70px;
+      margin: .5em .5em 0 .5em;
+      cursor: pointer;
+    }
+
+    .avatar img:hover, .selected {
+      border: 4px  #ffdd00 solid;
+      border-radius: 50%;
+    }
+
+    .avatarSelected {
+      float:right;
+      height: 100px;
+      width: 100px;
+      margin: 1.5em 0 .5em .5em;
+      background-image: url("images/anon.svg");
+    }
+
+    .flexParent {
+      justify-content: flex-start;
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="head_banner">
+    <p><span class="bold" style="color:#43809b;">COMMUNICATING</span> FOR <span style="font-weight: bold">RESULTS</span></p>
+    <p style="margin-top:.5em; color:#8dbf22; font-weight: bold;">Activities</p>
+  </div>
+    <div class="header">
+        <div class="mainColor">
+            <h1>Choose Your Own Business Adventure</h1>
+        </div>
+        <div class="darker"></div>
+        <div class="lighter"></div>
+    </div>
+
+    <div class="slide show">
+      <h2>Introduction</h2>
+      <p>No one likes delivering or receiving bad news, and you might try to avoid being the one that has to give the negative message, but knowing the best way to deliver negative messages is an essential part of your business communication skill set.  Whether you are communicating with customers, investors, or employees, you need to make sure you are maintaining goodwill toward the receiver despite the nature of the news you are delivering. It’s not just about protecting yourself and your company from legal liabilities, either. You want to put the company’s best foot forward by being honest and accountable for your actions, and sensitive to the receiver of the bad news. This activity is designed to help you test your skills in delivering unfavourable news. </p>
+      <p>Take on the role of an eager young entrepreneur and navigate your way through the tough situations that inevitably arise in the business world. </p>
+    </div>
+
+    <div class="slide">
+      <h2>Your Role</h2>
+      <p>You are a young entrepreneur starting up a business venture called Unstoppable Adventure Tours, a company based in Vancouver that provides tours and group adventures for people with disabilities. During your first year, everything has gone according to your business plan, and you’ve successfully completed each of the three tours you currently offer at least twice. You’ve got a great partner, Taylor, whom you’ve known since high school, and you’ve decided you can afford to hire a marketing coordinator to help spread the word about Unstoppable: Adventure Tours for Everyone. There are also three other employees who help lead the tours. Now, with the growing popularity of your company, you’re planning on expanding to include two more tours, starting out from Toronto, where Taylor lives. You’re excited about the prospect of expansion and hope things will go as well in Toronto as they have in Vancouver.</p>
+
+      
+      <div class="question backgroundTexture">
+        <h2>Choose your character name:</h2>
+        <input type="text" name="username" id="username">
+      </div>
+
+      <div class="question backgroundTexture">
+        <h2>Choose your character look:</h2>
+        <div class="flexParent">
+          <div class="avatar"><img id="0" src="images/avatar0.svg"></div>
+          <div class="avatar"><img id="1" src="images/avatar1.svg"></div>
+          <div class="avatar"><img id="2" src="images/avatar2.svg"></div>
+          <div class="avatar"><img id="3" src="images/avatar3.svg"></div>
+          <div class="avatar"><img id="4" src="images/avatar4.svg"></div>
+          <div class="avatar"><img id="5" src="images/avatar5.svg"></div>
+          <div class="avatar"><img id="6" src="images/avatar6.svg"></div>
+          <div class="avatar"><img id="7" src="images/avatar7.svg"></div>
+          <div class="avatar"><img id="8" src="images/avatar8.svg"></div>
+          <div class="avatar"><img id="9" src="images/avatar9.svg"></div>
+          <div class="avatar"><img id="10" src="images/avatar10.svg"></div>
+          <div class="avatar"><img id="11" src="images/avatar11.svg"></div>
+        </div>
+      </div>   
+        <p style="float: right; clear: left; font-size: .7em;">(Character icons by <a style="border-bottom: none" href="https://www.flaticon.com/authors/roundicons" target="_blank">Roundicons at Flaticon</a>.)</p>  <br>  
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Scenario 1: Refusing a Request for Information or Declining an Invitation</h2>      
+      <p>Just before the launch of your two new tours, you receive a letter from a local charity for amputee children in Vancouver inviting you to come to their annual awards ceremony and charity dinner and give a speech. However, you will be in Toronto during the ceremony to launch your new tours and must inform the charity, which has done a great deal of free advertising for you and provided you with a large share of your customers, that you will be unable to attend.</p>
+      <p>Look at the two letters below. Which letter do you send?</p>
+
+      <input id="00" type="radio" name="q0" value="option1" data-score="correct"><label for="00">Option 1</label>
+      <input id="01" type="radio" name="q0" value="option2" data-score="wrong"><label for="01">Option 2</label>
+
+      <p class="answer question backgroundTexture" data-text="option1">Well done! You opened neutrally, established a logical basis for your refusal, offered an alternative, and concluded with good wishes. Mr. Gibson graciously accepts your prize offer and expresses congratulations in launching your two new tours in Toronto.</p>
+      <p class="answer question backgroundTexture" data-text="option2">Mr. Gibson doesn’t reply to your letter. He felt a little put off as soon as he saw in the opening of your letter that you would not be able to attend, and you only partially explained why you refused his offer. Your conciliatory alternative did not seem very sincere, and your closing didn’t include any forward-looking remark, so he didn’t feel the need to keep up any sort of connection with you or with Unstoppable Adventure Tours. As a result, you have lost his endorsement and a significant number of potential clients.</p>
+
+      <div class="emailContainer">
+        <div class="email">
+          <h3>Option 1</h3>
+            <p>Dear Mr. Gibson,</p> 
+
+            <p>The Sunny Days Charity for amputee children in Vancouver is an outstanding organization that has brought so much happiness to the parents and children of our community. Unstoppable Adventure Tours is a grateful supporter of your charity, and I am honoured by your invitation to speak at your annual awards ceremony and charity dinner. </p>
+
+            <p>As you may know, Unstoppable is about to launch two new tours that will be based out of Toronto. This launch has been many months in planning, and we are excited to able to provide further opportunities for adventure travel to people with disabilities, such as the children your charity supports. Unfortunately, the date of our launch coincides with the date of your annual awards ceremony and dinner, and as such, I am unable to attend. However, our company would be honoured to be a part of this exciting event and would like to offer an all-expense paid trip for a child and guardian on the tour of their choosing as a prize for one of your awards. I will be happy to send out the details and anything else you might need if you choose to accept. </p>
+
+            <p>I wish you every success at your charity dinner and look forward to offering a lucky award winner the adventure of a lifetime. 
+
+            <p>Best, </p>
+
+            <p class="username"></p>      
+        </div>
+        <div class="email">
+          <h3>Option 2</h3>
+          <p>Dear Mr. Gibson,</p> 
+
+          <p>Thank you very much for the kind invitation to speak at your annual awards ceremony and charity dinner. I have great respect for your organization and the work you do, and I am sorry to say that I will miss what is sure to be such an outstanding event.</p> 
+
+          <p>Unfortunately, I already have an engagement on the same day as your awards dinner, and it is too late notice for me to change my schedule. However, I hope you will accept a prize offering of a free trip for a child and guardian on any one of our tours.</p> 
+
+          <p>As I’ve already mentioned, I admire the work you’ve done and wish you every success with the charity dinner.</p> 
+
+          <p>Best, </p>
+
+          <p class="username"></p> 
+        </div>
+      </div>  
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Scenario 2: Refusing a Claim</h2>
+      <p>You’ve received a letter from a customer who took part in one of your tours a month ago. The customer complained about the theft of her expensive camera during one of the overnight stays at a cabin resort while visiting Chilliwack Lake. She has asked that you refund the price of the camera. However, the customer signed a waiver saying that she, and not Unstoppable Adventures, was responsible for the loss of any articles during the length of the trip.</p>
+      <p>Look at the two letters below. Which letter do you send?</p>
+      
+      <input id="02" type="radio" name="q1" value="option1" data-score="wrong"><label for="02">Option 1</label>
+      <input id="03" type="radio" name="q1" value="option2" data-score="correct"><label for="03">Option 2</label>
+
+      <p class="answer question backgroundTexture" data-text="option1">Unfortunately, Ms. Pacey was not reconciled by your letter. She felt that you were blaming her for the loss of the camera when she read phrases such as, "you lost your camera," and, "the waiver you signed." She does not take advantage of the coupon you enclosed and writes a poor review of your tour on her blog.</p>
+      <p class="answer question backgroundTexture" data-text="option2">Excellent! Your neutral language, full explanation, and offer of an alternative were well-received by Ms. Pacey. You were even able to get a hold of the lost camera from the hotel and return it to a thankful Ms. Pacey, who came back for another tour and brought three of her friends along with her.</p>
+
+      <div class="emailContainer">
+        <div class="email">
+          <h3>Option 1</h3>
+          <p>Dear Ms. Pacey,</p>
+
+          <p>Unstoppable Adventure Tours is dedicated to giving everyone a chance to experience the thrill of the outdoors in a safe a positive environment. We hope that everyone who tours with us has a fun and memorable experience, and I’m sorry to hear that you lost your camera while you were on tour with us.</p>
+
+          <p>In order to make sure we can continue to provide the best possible service, we have put policies into place that protect our customers, employees, and the vendors we deal with. These policies include the waiver we require our customers to sign. I have included a copy of the waiver you signed, agreeing to our policy stating that Unstoppable Adventure Tours is not responsible for the loss or damage of personal belongings during the tour. The loss of your camera is not our fault, and I am unable to offer a refund for the value of the camera. However, I have taken the liberty of contacting the manager of the hotel where you were staying at during the tour with a description of the camera, and if it is found it will be returned to you. I would also like to offer you the enclosed coupon for 30% off of your next tour with us. </p>
+
+          <p>We value your business and look forward to providing you with more safe and fun adventure experiences. </p>
+
+          <p>Regards, </p>
+
+          <p class="username"></p>           
+        </div>
+        <div class="email">
+          <h3>Option 2</h3>
+          <p>Dear Ms. Pacey,</p> 
+
+          <p>Unstoppable Adventure Tours is dedicated to giving everyone a chance to experience the thrill of the outdoors in a safe a positive environment. We hope that everyone who tours with us has a fun and memorable experience, and I’m sorry to hear that your camera was stolen while you were on tour with us.</p> 
+
+          <p>In order to make sure we can continue to provide the best possible service, we have put policies into place that protect our customers, employees, and the vendors we deal with. These policies include the waiver we require our customers to sign. I have included a copy of your signed waiver with this letter for your review. The waiver states that Unstoppable Adventure Tours is not responsible for the loss or damage of personal belongings during the tour. The theft of your camera would fall under this clause, and as such, I am unable to offer a refund for the value of the camera. However, I have taken the liberty of contacting the manager of the hotel where you were staying at during the theft with a description of the camera, and if it is found it will be returned to you. I would also like to offer you the enclosed coupon for 30% off of your next tour with us.</p> 
+
+          <p>We value your business and look forward to providing you with more safe and fun adventure experiences.</p> 
+
+          <p>Regards, </p>
+
+          <p class="username"></p>           
+        </div>
+      </div>  
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Scenario 3: Turning Down Job Applicants</h2>
+      <p>You’ve gone through several rounds of interviews and narrowed down your choice for marketing coordinator down to two candidates. In the end, you’ve decided to go with the candidate that has greater experience in marketing, and must inform the other candidate that he has not received the job.</p>
+      <p>Look at the two letters below. Which letter do you send?</p>
+
+      <input id="04" type="radio" name="q2" value="option1" data-score="wrong"><label for="04">Option 1</label>
+      <input id="05" type="radio" name="q2" value="option2" data-score="correct"><label for="05">Option 2</label>
+
+      <p class="answer question backgroundTexture" data-text="option1">Mr. Zerafa was disappointed that he did not get the position as marketing coordinator. Further, he was affronted by the direct refusal, and did not bother to read the rest of the letter. He felt discouraged and a lack of confidence when he went in for his next interview.</p>
+      <p class="answer question backgroundTexture" data-text="option2">Well done! While Mr. Zerafa was disappointed that he did not get the position, your opening softened the blow, and the rest of the letter reassured him that the decision was not based on a lack of qualifications on his part. He went in to his next interview with confidence and was offered a position at that company.</p>
+
+      <div class="emailContainer">
+        <div class="email">
+          <h3>Option 1</h3>
+          <p>Dear Mr. Zerafa</p>
+
+          <p>I regret to inform you that we have decided to go with another candidate for the position of marketing coordinator which you applied for.</p> 
+
+          <p>I want to thank you for your interest in joining our team and for your impressive application. We received a great number of applications, and it was a difficult decision.</p> 
+
+          <p>Although we are unable to offer you a position at this time, our decision is in no way a reflection of your potential in the field. Your resume will be kept on file for any future positions that may open up, should you wish to apply.</p> 
+
+          <p>I extend my best wishes for you in your future career.</p> 
+
+          <p>Best, </p>
+
+          <p class="username"></p>           
+        </div>
+        <div class="email">
+          <h3>Option 2</h3> 
+          <p>Dear Mr. Zerafa</p>
+
+          <p>On behalf of myself and my partner, I want to thank you for your interest in joining our team and for your impressive application. We received a great number of applications, all of which were of top quality.</p> 
+
+          <p>After conducting a careful review in light of the needs of our company, we have now completed the search for a marketing coordinator . Although we are unable to offer you a position at this time, our decision is in no way a reflection of your potential in the field. We will keep your resume on file for any future positions that may open up, should you wish to apply.</p>
+
+          <p>I extend my best wishes for you in your future career.</p> 
+
+          <p>Best, </p>
+
+          <p class="username"></p>          
+        </div>
+      </div>  
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Scenario 4: Announcing Bad News to Customers</h2>
+      <p>A large storm has caused severe damage in Whistler, where one of your adventure tours is based. You have no choice but to cancel the trip for the time being, and must now inform the 21 customers who have signed and paid for the trip.</p>
+      <p>Look at the two letters below. Which letter do you send?</p>
+
+      <input id="06" type="radio" name="q3" value="option1" data-score="correct"><label for="06">Option 1</label>
+      <input id="07" type="radio" name="q3" value="option2" data-score="wrong"><label for="07">Option 2</label>
+
+      <p class="answer question backgroundTexture" data-text="option1">Great job! In your letter, you opened with a good buffer, provided a solid, reasonable explanation, stated the bad news in a dependent clause, and closed with a final reminder of the alternatives in a reader-centred phrase. Most of your customers chose another tour option and you were able to minimize the number of refunds you had to issue.</p>
+      <p class="answer question backgroundTexture" data-text="option2">Your letter opened with a good buffer, provided a solid, reasonable explanation, and stated the bad news in a dependent clause. However, your apology in the last sentence was unnecessary. While you may have wanted to show sympathy for the inconvenience caused by the storm, the situation was beyond your company’s control, and an explanation on its own would have served better than the apology. Because of the apology, your customers felt they could lay the blame in the company, rather than the weather, and were less inclined to opt for one of the other tours, asking for a refund instead.</p>
+
+      <div class="emailContainer">
+        <div class="email">
+          <h3>Option 1</h3>
+          <p>Dear Adventurer:</p>
+
+          <p>Thank you for choosing Unstoppable Adventure Tours for your trip this summer. We’ve given many adventurers a once-in-a-lifetime experience, and we look forward to providing you with a safe and memorable time on your own adventure.</p> 
+
+          <p>As you may know, the recent storm in Whistler has caused significant damage and as such, the June 12-18 adventure tour you signed up for has been cancelled for the time being.</p>
+
+          <p>We are offering several options in its place. The Chilliwack Lake adventure tour is happening during the same time as the Whistler adventure tour, and we’ve had great feedback from previous adventurers. You can read reviews and find out more here: (link). The second option is to go on the next Whistler adventure tour, from August 8 to August 14. Unstoppable Adventure Tours will cover the cost of any price difference in the tours. Alternatively, we can also refund your tour price in full.</p> 
+
+          <p>Please let us know if you are interested in joining the June Chilliwack Lake adventure tour or the August Whistler adventure tour, or if you would like a refund, and we will make arrangements for you as soon as possible.</p> 
+
+          <p>Thanks,</p> 
+
+          <p>Unstoppable Adventure Tours.</p>           
+        </div>
+        <div class="email">
+          <h3>Option 2</h3>
+          <p>Dear Adventurer:</p> 
+
+          <p>Thank you for choosing Unstoppable Adventure Tours for your trip this summer. We’ve given many adventurers a once-in-a-lifetime experience, and we look forward to providing you with a safe and memorable time on your own adventure.</p> 
+
+          <p>Unfortunately, the recent storm in Whistler has caused significant damage and as such, the June 12-18 tour has been cancelled for the time being.</p> 
+
+          <p>We are offering several options in its place. The Chilliwack Lake adventure tour is happening during the same time as the Whistler adventure tour, and we’ve had great feedback from previous adventurers. You can read reviews and find out more here: (link). The second option is to go on the next Whistler adventure tour, from August 8 to August 14. Unstoppable Adventure Tours will cover the cost of any price difference in the tours. Alternatively, we can also refund your tour price in full.</p> 
+
+          <p>We apologize for any inconvenience the storm has caused to your travel plans. Please let us know if you are interested in joining the June Chilliwack Lake adventure tour or the August Whistler adventure tour, or if you would like a refund, and we will make arrangements for you as soon as possible.</p> 
+
+          <p>Thanks,</p> 
+
+          <p>Unstoppable Adventure Tours</p>
+        </div>
+      </div>  
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Scenario 5: Announcing Bad News to a Well-known Employee</h2>
+      <p>After crunching your numbers, you’ve realized the storm in Whistler, and the subsequent refunds you had to issue, has created a bigger setback than you originally thought. Recently, your partner Taylor has asked about the feasibility of creating another tour based out of Toronto, after the successful first run of the two trips you launched a few months ago. You have to write to him and tell him that you don’t think this will be possible at this time.</p>
+      <p>Look at the two letters below. Which letter do you send?</p>
+
+      <input id="08" type="radio" name="q45" value="option1" data-score="wrong"><label for="08">Option 1</label>
+      <input id="09" type="radio" name="q45" value="option2" data-score="correct"><label for="09">Option 2</label>
+
+      <p class="answer question backgroundTexture" data-text="option1">Taylor is your business partner and friend. A direct message would have been more effective than the indirect message you chose. Taylor knows you appreciate this work, and the opening not only made him expect a positive rather than a negative response, and in retrospect seemed insincere. He was a little offended and your next meeting was fraught with tension.</p>
+      <p class="answer question backgroundTexture" data-text="option2">Fantastic! Taylor is your business partner and friend. As such, a direct message is more effective at breaking the bad news than an indirect message. You quickly delivered the negative message, explained why, and moved on. Taylor was disappointed, but understood the situation, and the two of you were able to plan a budget at your next meeting that would allow for the organization of a new tour in the future.</p>
+
+      <div class="emailContainer">
+        <div class="email">
+          <h3>Option 1</h3>
+          <p>Dear Taylor,</p>
+
+          <p>Thanks for your latest message. Our two new Toronto tours had a successful first run, and they were even able to exceed our expected profits. I was thrilled by the results and I know we owe a huge part of that success to your hard work.</p>
+
+          <p>Organizing another tour option starting from the Toronto area sounds like a great idea, and the suggestions you’ve made are excellent. Unfortunately, we are unable to budget for a new tour at this time. As you aware, the storm in Whistler and subsequent cancellation of the tour has created a larger setback than either of us anticipated. I will send you the report on the outcome of the tour cancellation by the end of the week.</p> 
+
+          <p>In the meantime, I will look into how much of a budget we would need to be able to expand and include the new adventure tour you’ve suggested for considering in the future. If you have any questions, please don’t hesitate to call me.</p> 
+
+          <p>Sincerely,</p> 
+
+          <p class="username"></p>           
+        </div>
+        <div class="email">
+          <h3>Option 2</h3> 
+          <p>Hi Taylor, 
+
+          <p>The idea for the new adventure tour you sent me last week sounds fantastic, but we are unable to budget for the organization of a new tour at this time.</p> 
+
+          <p>As you know, the storm in Whistler and subsequent cancellation of the tour has created a larger setback than either of us anticipated. I’ve been working on the report on the outcome of the tour cancellation and will have it to you by the end of the week. After you’ve had a chance to read over it, let’s meet to discuss our options for moving forward.</p>
+
+          <p>In the meantime, I will look into how much of a budget we would need to organize the new adventure tour you’ve suggested. The work you’ve put into the two Toronto tours has led to a great success and I’m confident that we will be able to plan our budget so that we will be able to expand and include more tours in the future.</p> 
+
+          <p>Best,</p> 
+
+          <p class="username"></p>          
+        </div>
+      </div>  
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Scenario 6: Announcing Bad News to Employees</h2>
+      <p>After the meeting you had with Taylor concerning the fallout from the adventure tour you had to cancel due to the storm damage in Whistler, the two of you have decided you are unable to offer the quarterly bonus to your employees this quarter. Now you must inform them that they will not be receiving a bonus.</p>
+      <p>Look at the two letters below. Which letter do you send?</p>
+
+      <input id="010" type="radio" name="q5" value="option1" data-score="wrong"><label for="010">Option 1</label>
+      <input id="011" type="radio" name="q5" value="option2" data-score="correct"><label for="011">Option 2</label>
+
+      <p class="answer question backgroundTexture" data-text="option1">Your employees weren’t thrilled by the news. They understood that the damage in Whistler caused financial setbacks to the company, but they would have felt more reassured if you had included a paragraph that would help motivate employees to accept the loss of an expected bonus. The other letter had a paragraph explaining that how the company’s money was used would benefit employees in the long run.</p>
+      <p class="answer question backgroundTexture" data-text="option2">Your employees weren’t thrilled by the news, but your explanation did leave them feeling invested in the company and willing to stick it out to see better times.</p>
+
+      <div class="emailContainer">
+        <div class="email">
+          <h3>Option 1</h3> 
+          <p>Dear Employees,</p> 
+
+          <p>Unstoppable Adventure tours has had a fantastic first year in business, and we owe a great deal of our success to your hard work. We’ve received wonderful feedback from our adventurers about the quality of care and attention they received from their tour guides during their trips. We’ve also built a name for ourselves as a company that opens up opportunities for new experiences for people with disabilities.</p>
+
+          <p>Although we’ve been successful overall, we have met with some challenges along the way. The severe storm in Whistler and the damage it caused led to unexpected expenses for the company. As such, we are unable to offer our employees a bonus for this past quarter. We felt that this decision was better than cutting costs in other areas of the business by cancelling tours or terminating employees. Rest assured that this setback is temporary and we plan on having a regular bonus payout in the next quarter.</p>
+
+          <p>If you have any questions, please don’t hesitate to contact me.</p> 
+
+          <p class="username"></p>          
+        </div>
+        <div class="email">
+          <h3>Option 2</h3>
+          <p>Dear Employees, 
+
+          <p>Unstoppable Adventure tours has had a fantastic first year in business, and we owe a great deal of our success to your hard work. We’ve received wonderful feedback from our adventurers about the quality of care and attention they received from their tour guides during their trips.</p> 
+
+          <p>Although we’ve been successful overall, we have met with some challenges along the way. The severe storm in Whistler and the damage it caused led to unexpected expenses for the company. As such, we are unable to offer our employees a bonus for this past quarter. We felt that this decision was better than cutting costs in other areas of the business by cancelling tours or terminating employees.</p> 
+
+          <p>Rest assured that this setback is temporary. As you will see in the annual report, a portion of our profit goes into investing in the company so that we are able to expand and include new tours. In time, this company growth will allow us to offer better benefits and more competitive salaries.</p> 
+
+          <p>If you have any questions, please don’t hesitate to contact me.</p>   
+
+          <p class="username"></p>         
+        </div>
+      </div>  
+    </div>
+
+    <div class="slide" id="results">
+      <div class="avatarSelected"></div>
+      <h2>Your Result</h2>
+      <span id="masterfeedback"></span>
+
+    </div>
+
+    <div class="slide">
+      <div class="avatarSelected"></div>
+      <h2>Debriefing</h2>
+      <p>Delivering and receiving bad news is a reality anyone in the business world will have to face sooner or later. It’s a challenging task, but the way you communicate negative messages can make or break you. Study the tips covered in <a href="https://dashboard.oup.com/d2l/common/dialogs/quickLink/quickLink.d2l?ou=8039&amp;type=lti&amp;rcode=OUPUS-213798&amp;srcou=8039" target="_blank" rel="noopener noreferrer">Chapter 8</a> of your text and commit them to memory. They will come in handy! </p>
+    </div>    
+
+    <div id="navButtons"><button id="back">Back</button> <button id="next">Next</button></div>
+    <div class="copyright" >
+      <p><span id="ccyear">2017</span>  &#169; Oxford University Press. All Rights Reserved.</p>
+      <img src="images/oup-logo.png" alt="Oxford University Press logo">
+    </div>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+
+    // On clicking a radio button, show matching feedback
+    // Record the answer: correct or incorrect
+    var score = 0;
+    $("input[type='radio']").change(function(){
+      $("input[name='"+$(this).attr("name")+"']").prop("disabled",true);
+      $(this).siblings("p[data-text='"+$(this).val()+"']").slideDown("slow");
+      if( $(this).attr("data-score") == "correct" ){score++}
+    });
+
+    $("#next").on("click", function(){
+      //Feed entered character name to following pages
+      var username = $("#username").val().replace(/(<([^>]+)>)/ig,"");
+      if(username.length!=0){
+        $(".username").html(username);
+      } else {
+        $(".username").html("Anonymous");
+      }
+      // Get final score and show matching feedback
+      if( $(".slide.show").is("#results") ) {
+        var str = "Final score: "+score+" out of 6";
+        provideFeedback(score);
+        $.post("https://lti.oupsupport.com/DL/ConnectFlash.php?name=mey_chooseyourbusinessadventure&lab_value="+str,function(ajaxresult){
+          if(ajaxresult=='ERROR_NO_USER'){
+            alert("Your session has timed out and your data could not be saved. Please login and try again.");
+          } else {
+            alert("Your score has been recorded. Completing the activity again will overwrite your current score.");
+          }
+        });
+      }
+    });
+
+    // Show avatar selection
+    $(".avatar img").on("click",function(){
+      $(".selected").removeClass("selected");
+      $(this).addClass("selected");
+      var choice = $(this).attr("id");
+      $(".avatarSelected").css("background-image","url('images/avatar"+choice+".svg')")
+    });
+
+    // Feedback at the end of the exercise
+    function provideFeedback(score) {
+      if(score==3){
+        $('#masterfeedback').html('Starting a company isn’t easy. You’ve had some ups and downs, but your company has managed to pull through, and you’ll be able to see out another year.  Even though a storm causing damage in Whistler, which was beyond your control, turned out to be expensive for you, the success of the two new tours you launched in Toronto did well enough to cover most of the costs. Unfortunately, you won’t be able to add any new adventure tours, but it’s definitely a possibility down the road, especially if you sharpen your communication skills when communicating negative messages by reviewing <a href="https://dashboard.oup.com/d2l/common/dialogs/quickLink/quickLink.d2l?ou=8039&amp;type=lti&amp;rcode=OUPUS-213798&amp;srcou=8039" target="_blank" rel="noopener noreferrer">Chapter 8</a> of your text! ');
+      }else if(score<=2){
+        $('#masterfeedback').html('Starting a company isn’t easy. You’ve been faced with some tough challenges. The damage caused by the storm in Whistler was a big financial setback, but you might have pulled through it if you’d maintained better relations with your clients and your employees. Unfortunately, your next unfavourable news message will be a letter informing everyone that Unstoppable Adventure Tours will be closing its doors for good. But all is not lost! Study <a href="https://dashboard.oup.com/d2l/common/dialogs/quickLink/quickLink.d2l?ou=8039&amp;type=lti&amp;rcode=OUPUS-213798&amp;srcou=8039" target="_blank" rel="noopener noreferrer">Chapter 8</a> of your text to improve your skills at communicating negative messages, and your next start-up business adventure is sure to be a success!');
+      }else if(score>=4){
+        $('#masterfeedback').html('You’ve put so much work into Unstoppable Adventure Tours, and it’s really paid off! You’re company has come through the financial setback with flying colours, and in the next year you’ll be able to launch a new adventure tour from Toronto. By making use of your great communication skills, you’ve received a lot of media attention for working with people with disabilities, and you’ve even had some interested investors that would like to see tours being organized out of Halifax! Looks like Unstoppable Adventure Tours really is unstoppable. ');
+      }      
+    }
+
+  });
+</script>
+
+</body>
+</html>

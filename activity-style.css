@@ -1,0 +1,913 @@
+/*GLOBAL FOR ALL ACTIVITIES*/
+
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  font-family: 'Ubuntu', Tahoma, Geneva, sans-serif;
+/*  border:solid 1px red;*/
+}
+
+body {
+  background-color: #f0f7fd;
+  line-height: 1.5;
+  margin:0;
+  color: #333333;
+}
+p {
+  margin: .5em 0;
+  line-height: 1.4;
+}
+
+textarea, input[type="text"], select {
+  border:solid 1px #3d9ed8;
+  border-radius: 3px;
+  display: block;
+  margin: 5px 0;
+  height: 1.7em;
+  max-width: 100%;
+}
+
+input[name="q"], textarea {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin:auto;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.boldCapital {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .9em;
+  letter-spacing: 1px;
+}
+
+.backgroundTexture {
+  background-image: url("images/triangles.png");
+}
+
+/*--Colors and containers for the stylized header and footer--*/
+.mainColor {
+  float:left;
+  background-color: #59b9ea;
+  width: 75%;
+}
+
+.darker {
+  float:left;
+  background-color: #3d9ed8;
+  width: 15%;
+}
+
+.lighter {
+  float:left;
+  background-color: #b4dff8;
+  width: 10%;
+}
+
+.head_banner {
+  background: url("images/banner_small.jpg") no-repeat;
+  background-color: white;
+  background-position: right bottom;
+  padding: 23px;
+  height:200px;
+}
+
+.head_banner p {
+  font-size: 3em;
+  margin: 0;
+  letter-spacing:2px;
+  line-height: 1;
+}
+
+.header, .footer {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%
+}
+
+#navButtons {
+  padding: 0 10px;
+  margin-top: 0;
+}
+
+.copyright {
+  background-color: #b4dff8;
+  width: 100%; 
+  padding: 10px 20px;
+  margin: 0; 
+  font-size: .9em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.copyright p {
+  color: white;
+  margin: auto 15px;
+}
+
+/*--Headers in text--*/
+h1 {
+  margin:0;
+  padding: 5px 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+h2 {
+  color: #008bd2;
+  margin: 7px 0;
+  font-size: 1.3em;
+  margin: 15px 0 0 0;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 15px 0 0 0;
+  color: #75ac00;
+/*  font-weight: 700;*/
+}
+
+/*--Links--*/
+
+a {
+  color:inherit;
+  text-decoration: none;
+  border-bottom: solid 3px rgba(141, 191, 34, 0.64);
+}
+
+a:hover {
+  font-weight: 700;
+  color:#4c4c4c;
+}
+
+a:visited {
+  border-color: rgba(61, 158, 216, 0.64);
+}
+
+.flexParent {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/*--Slide visibility for one-page navigation--*/
+.slide {
+  padding: 0 10px;
+  position:absolute;
+  left: -9999999px;
+}
+
+.show {
+  position:static;
+}
+
+/*--All buttons--*/
+button {
+  background-color: #008bd2;
+  color:white;
+  display: inline-block;
+  margin:10px 10px 10px 0;
+  padding: 3px 6px;
+  border:none;
+  font-size:1em;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+/*Button to save answers for later*/
+.other_button {
+  background-color: #8dbf22;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px grey;
+  font-size: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+/*--Navigation buttons--*/
+
+#navButtons.first #back {
+  display: none;
+}
+
+#navButtons.last #next {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  font-size: 1em;
+  margin:0;
+}
+
+li + p {
+  margin-top: .3em;
+}
+
+/*-- Container and buttons for Showing/Hiding answers --*/
+.question {
+  border:solid 1px #3d9ed8;
+  border-radius:5px;
+  padding: 7px 14px;
+  margin: 15px 0;
+  position: relative;
+}
+
+.answer {
+  display: none;
+  overflow: hidden;
+}
+
+.answer_button,.review, .check_results {
+  margin:10px 0;
+  background-color: #3abcff; 
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px grey;
+}
+
+/*-- Radio buttons and their labels stay in line--*/
+
+input[type="radio"] {
+  float: left;
+  margin: 5px;
+}
+
+label {
+  display: block;
+}
+
+label + li {
+  margin-top: 1.2em;
+}
+
+/* -- Initial screen when activity is already completed --*/
+
+.spread {
+  overflow: hidden;
+}
+
+#completed {
+  z-index: 1000;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(to bottom right, rgba(0, 0, 70,0.8), rgba(28, 181, 224, 0.8));
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  text-shadow: 2px 2px 7px #000000;
+  padding: 20px;
+  padding-top: 50px;
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  display: none;
+}
+
+#completed button {
+  font-size: .5em;
+  font-weight: 700;
+  box-shadow: 0px 0px 20px 4px white;
+  margin-bottom: 20px;
+  border:1px solid white;
+  border-radius: 10px;
+  padding: 7px 15px;
+}
+
+#completed p {
+  color:white;
+}
+
+/*-- Graph for 01 Whats Your Ethical Style --*/
+
+#graphEthics {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  border-radius: 35px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  box-shadow: 0px 0px 20px grey;
+  margin: 20px;
+}
+
+#justice {
+  background:linear-gradient(to right, #753a88,#cc2b5e);
+  width: 11%;
+  padding-top: 17px;
+}
+
+#care {
+  background:linear-gradient(to right, #22b904, #e6ff1c);
+  width: 89%;
+  padding-top: 17px;
+}
+
+/* -- bar chart made of divs for 02 How Do You Communicate -- */
+
+.graph {
+  width:100%;
+  margin: 1em 0;
+  padding: 10px 4px 10px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  border:solid 1px #3d9ed8;
+  border-radius:5px;
+}
+
+.labels {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.bars {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.unit {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.unit > span {
+  display: none;
+}
+
+.bar {
+  width: 0;
+  float: right;
+  transition: all 1s ease;
+  height: 50px;
+  margin: 5px 0;
+  padding: 17px 0 15px 0;
+  box-shadow: 5px 5px 5px darkgrey;
+  color:white;
+  font-weight: 700;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.spanOutside {
+  position: relative;
+  display: block;
+  color: grey;
+}
+
+.spanZero {
+  position: relative;
+  left: 15px;
+  color: grey;
+}
+
+.scale {
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: 2px;
+  color: #015e8d;
+}
+
+.scale > div {
+  border-width: 1px;
+  border-color: #015e8d;
+  border-style: none none dotted dotted;
+  width: 25%;
+  height: 1em;
+  margin-top: 5px;
+  padding: 0 2px 17px 2px;
+  line-height: .9;
+}
+
+#end {
+  border-right:dotted 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#end > span {
+  display: block;
+}
+
+.label {
+  width: 100px;
+  height: 50px;
+  text-align: right;
+  vertical-align: middle;
+  float: left;
+  margin: 5px 0;
+  padding: 14px;
+}
+
+#specialCase, .specialCase {
+  padding-top: 3px;
+}
+
+#aggressive, .bar1 {
+  background:linear-gradient(to right, #753a88,#cc2b5e);
+}
+#passiveAggressive, .bar2 {
+  background:linear-gradient(to right, #e65c00, #F9D423);
+}
+#passive, .bar3 {
+  background:linear-gradient(to right, yellowgreen, yellow);
+}
+#assertive, .bar4 {
+  background:linear-gradient(to right, #007991, #78ffd6);
+}
+
+/* -- Drag'n'drop and bar chart for 03 Communication Collaboration -- */
+
+.drag_n_drop {
+  border: 1px #3d9ed8 solid;
+  border-radius: 5px;
+  padding: 10px 10px;
+  font-family: sans-serif;
+  float: left;
+  margin: 1%;
+  list-style-type: none;
+  overflow: hidden;
+  font-size: 0.8em;
+  width:23%;
+}
+
+.heading {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 1.4em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.item span {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 5px;
+}
+.drag_n_drop li {
+  min-height: 30px;
+  display: block;
+  border: 1px solid;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-align: center;
+  cursor:move;
+}
+.drag_n_drop ul {
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+  min-height: 200px;
+  padding: 0;
+  list-style-type: none;
+}
+
+div[data-cat='pro'] .heading {
+  background-color: #c0ff9e;
+}
+div[data-cat='pro'] li {
+  background-color: #e6ffd8;
+  border-color: #7bd24c;
+}
+div[data-cat='con'] .heading {
+  background-color: #ffb8b8;
+}
+div[data-cat='con'] li {
+  background-color: #ffdada;
+  border-color: #f77a7a;
+}
+
+.match_controls {
+  text-align: left;
+  width: 100%;
+  clear: both;
+  margin-right: 20px;
+  font-family: sans-serif;
+}
+.match_results {
+  margin-left: 15px;
+  display: none;
+  font-weight: 700;
+  width: 50%;
+}
+
+.correct, .total {
+  font-weight: 700;
+}
+
+#commColl .label {
+  height: 60px;
+  margin: 5px 0;
+  padding: 2px 7px;
+  width: 100px;
+  font-size: .8em;
+}
+
+ #commColl .bar {
+ 	background-color: yellow;
+ 	height: 60px;
+ } 
+
+/*-- 04 Brainstorming Basics --*/
+
+.paper {
+    padding: 1em 3em;
+    width: 95%;
+    margin: 10px auto 20px auto;
+    position: relative;
+    border: 1px solid #B5B5B5;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #B5B5B5;
+    background: white;
+    background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 1em;
+    background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 1em;
+    background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 1em;
+    -webkit-background-size: 100% 30px;
+    -moz-background-size: 100% 30px;
+    -ms-background-size: 100% 30px;
+    background-size: 100% 30px;
+}
+
+.paper::after {content:''; position:absolute; width:0px; top:0; left:39px; bottom:0; border-left:1px solid #F8D3D3;}
+
+.paper * {
+  color: #2d409b;
+  margin:0;
+  line-height: 1.9;
+}
+
+.paper li {
+  margin-left: -1em;
+}
+
+input.job {
+	border-width: 2px;
+}
+
+input.duty {
+	margin-top: 1em;
+	display: none;
+}
+
+input.skill {
+	border-style: dotted;
+	display: none;
+}
+
+.jobGroup {
+	margin:1em;
+	margin-left: 0;
+  border:1px solid #3d9ed8;
+  border-radius: 5px;
+  padding: .5em;
+}
+
+/*Mind map styles*/
+
+#containerZ {
+  width: 800px;
+  height: 450px;
+  margin:0 auto;
+  position:absolute;
+  top:140px;
+  left:175px;
+}
+#center-container {
+  height:500px;
+  top:0;
+  width:450px;
+  left:175px
+}
+
+#infovis {
+  position:relative;
+  width:450px;
+  height:450px;
+  margin:auto;
+  overflow:hidden;
+}
+
+#infovis-canvaswidget {
+  margin:25px 0 0 25px;
+}
+
+/*-- Grid in 05 Six-word memoirs -- */
+
+#memoirQuiz, #studentMemoirs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#memoirQuiz > .question, #studentMemoirs > .question {
+  width: 45%;
+  min-width: 200px;
+}
+
+#yourInput {
+  width: 500px;
+}
+
+/* -- Draggins and sorting for 06 Paragraphy Pile-up -- */
+
+.tiles ul {
+  padding: 0 0 7px 0;
+}
+
+.tiles li {
+  min-height: 30px;
+  display: block;
+  background-color: #e3f4fd;
+  border: 1px solid #008bd2;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor:move;
+}
+
+.tiles span {
+  padding: 2px 5px;
+  display: block;
+}
+
+li.placeholder {
+  border:none;
+  border-radius: 0;
+  background-color: #fff48f;
+}
+
+li.red, .red {
+  background-color: #ffdada;
+  border-color: #f77a7a;
+}
+
+li.green, .green {
+  background-color: #e6ffd8;
+  border-color: #7bd24c;
+}
+
+ul.disabled li {
+  cursor:default;
+}
+
+/* -- Small adjustments for 07 Active Passive Voice -- */
+
+.sentence>span {
+  display: inline-block;
+  background-color: white;
+  color: #5d5c5c;
+  padding: 5px;
+/*  border-radius: 10px;*/
+  box-shadow: 1px 1px 1px grey;
+  margin-bottom: 10px;
+}
+
+.reviewH {
+  margin-top: 0;
+}
+
+/* -- 08 Email Etiquette --  */
+.emailContainer, .rowNoWrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.email {
+    width: 50%;
+    background-color: white;
+    padding: 0 1.5em 1em 1.5em;
+    box-shadow: 0px 0px 3px grey;
+    margin: .5em auto;
+    color: black;
+}
+
+.email:first-child {
+  margin-right: 10px;
+}
+
+.email * {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+.email a {
+  border-bottom: none;
+  text-decoration: underline;
+  color: blue;
+}
+
+.email a:hover {
+  font-weight: initial;
+}
+
+.email a:visited {
+  color: purple;
+}
+
+@media (max-width: 600px) {
+  .emailContainer {
+    flex-flow: column nowrap;
+  }
+
+  .email {
+    width: 100%;
+  }
+
+  .email:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/*-- 12 Maslow's Hierarchy of Needs -- */
+
+  .incorrectAns {
+    background-color: #ffdada;
+    border-color: #e14242;
+    color: #e14242;
+  }
+
+  .correctAns {
+    background-color: #e6ffd8;
+    border-color: #57ad29;
+    color: #57ad29;
+  }  
+
+/*-- 13 Sell the Startup --*/
+
+.circleButton {
+  border-radius: 50%;
+  padding: 3px 9px; 
+  background-color: #7cb228; 
+  font-weight: 700; 
+  color: white;
+}
+
+/* -- jQuery UI Dialog Box style --*/
+
+  .ui-dialog {
+    background-color: white;
+    border:3px #75ac00 solid;
+    padding: .5em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 2px grey;
+  }
+
+  .ui-dialog-titlebar {
+    margin-bottom: .5em;
+    border-bottom: 1px dotted #75ac00;
+    position: relative;
+    font-weight: 700;
+    color: #75ac00;
+    font-size: 1.2em;
+    padding-bottom: 5px;
+  }
+
+  .ui-dialog-titlebar-close {
+    border:none;
+    background-color: salmon;
+    padding: 3px 6px;
+    border-radius: 25px;
+    color: white;
+    position: absolute;
+    right: 0;
+    font-size: .7em;
+    font-weight: normal;
+  }
+
+/* --Classes used to show and hide all kinds of elements across pages,
+  at the end to override all other display instructions-- */
+.hide {
+  display: none;
+}
+
+/*--Media Queries--*/
+
+@media (max-width: 1100px) {
+  .slide  {
+    padding: 0px 1.5em;
+  }
+}
+
+@media (max-width: 810px) {
+
+  .head_banner p {
+    font-size: 2.5em;
+    letter-spacing:1px;
+    margin-left: .2em;
+  }
+}
+
+@media (max-width: 725px) {
+  .head_banner p {
+    font-size: 2em;
+  }
+
+  .head_banner {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 660px) {
+  .head_banner p {
+    font-size: 1.7em;
+  }
+
+  .copyright {
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .copyright p {
+    margin:12px 0;
+    font-size: .8em;
+  }   
+}
+
+@media (max-width: 470px) {
+  .copyright {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .head_banner {
+    background-position: center bottom;
+  }
+
+  .head_banner p {
+    font-size: 1.5em;
+  }
+
+  #completed {
+    font-size: 2em;
+  }
+
+  .drag_n_drop {
+  	width: 48%;
+  }
+
+  .tiles ul {
+  width: 85%;
+  }
+
+  .tiles span {
+    font-size: .8em;
+  }
+
+  #graphEthics {
+    font-size: 15px;
+    height: 50px;
+    margin: 20px 0 30px 0;
+  }
+  #justice, #care {
+    padding-top: 13px;
+  }
+
+  .scale {
+    font-size: .65em;
+  }
+
+  #quiz > .question, #studentMemoirs > .question {
+    width: 100%;
+  }
+
+  #yourInput {
+    width: 100%;
+  }
+}
+
+@media (-moz-touch-enabled: 1), (pointer:coarse) {
+    .tiles li {
+        cursor:default;
+    }
+    .drag_n_drop li {
+        cursor:default;
+    }
+}
+
