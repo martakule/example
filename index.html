@@ -405,13 +405,6 @@
       if( $(".slide.show").is("#results") ) {
         var str = "Final score: "+score+" out of 6";
         provideFeedback(score);
-        $.post("https://lti.oupsupport.com/DL/ConnectFlash.php?name=mey_chooseyourbusinessadventure&lab_value="+str,function(ajaxresult){
-          if(ajaxresult=='ERROR_NO_USER'){
-            alert("Your session has timed out and your data could not be saved. Please login and try again.");
-          } else {
-            alert("Your score has been recorded. Completing the activity again will overwrite your current score.");
-          }
-        });
       }
     });
 
